@@ -9,13 +9,13 @@ public class CellPhone {
       - owner (ex: Dana Wyatt)
    */
 
-    private int serialNumber;
-    private String model;
-    private String carrier;
-    private String phoneNumber;
-    private String owner;
+    private int serialNumber = 0;
+    private String model = "";
+    private String carrier = "" ;
+    private String phoneNumber = "";
+    private String owner = "";
 
-    public CellPhone(int serialNumber, String model, String carrier, String phoneNumber, String owner){
+    public CellPhone(int serialNumber, String model, String carrier, String phoneNumber, String owner) {
         this.serialNumber = serialNumber;
         this.model = model;
         this.carrier = carrier;
@@ -59,5 +59,11 @@ public class CellPhone {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+    public void dial(String phoneNumber) {
+        System.out.println(owner + "'s phone is calling " + phoneNumber);
+    }
+    public static void display(CellPhone phone) {
+        System.out.println("Models: " + phone.getOwner() +"'s Phone is an " + phone.getModel());
     }
 }

@@ -2,37 +2,23 @@ package com.pluralsight;
 
 import java.util.Scanner;
 
+import static com.pluralsight.CellPhone.display;
+
 public class CellPhoneApplication {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        /* What is the serial number? 2597153
-        What model is the phone? iPhone 15 Pro Max
-        Who is the carrier? Verizon
-        What is the phone number? 888-555-1234
-        Who is the owner of the phone? Sandra
-          */
+        CellPhone phone1 = new CellPhone(1234567, "IPhone 15", "T-Mobile", "(123)-456-7890", "Sandy");
+
+        CellPhone phone2 = new CellPhone(3591113, "IPhone 16e", "Verizon", "(357)-911-1315", "Patrick");
+
+        phone1.dial(phone2.getPhoneNumber());
+        phone2.dial(phone1.getPhoneNumber());
+
+        display(phone1);
+        display(phone2);
 
 
-        CellPhone phone1 = new CellPhone(2597153, "IPhone 15 Pro Max", "Verizon", "888-555-1234", "Sandra");
 
-       System.out.print("What is the serial number?: ");
-       phone1.setSerialNumber(sc.nextInt());
-       sc.nextLine();
-       System.out.print("What is the model?: ");
-       phone1.setModel(sc.nextLine());
-       System.out.print("Who is the carrier?: ");
-       phone1.setCarrier(sc.nextLine());
-       System.out.print("What is the phone number?: ");
-       phone1.setPhoneNumber(sc.nextLine());
-       System.out.print("Who is the owner of the phone?: ");
-       phone1.setOwner(sc.nextLine());
-
-        System.out.println(phone1.getSerialNumber());
-        System.out.println(phone1.getModel());
-        System.out.println(phone1.getCarrier());
-        System.out.println(phone1.getPhoneNumber());
-        System.out.println(phone1.getOwner());
 
     }
 }
